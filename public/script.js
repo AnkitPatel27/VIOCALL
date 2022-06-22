@@ -11,7 +11,9 @@ const main_right  = document.getElementById('rightside')
 const cam_text = cam_icon.nextElementSibling;
 const chatting = document.getElementById('chatting');
 const participants = document.getElementById('participants');
-
+const link = document.getElementById('link')
+const link_text = document.querySelector('.link-text')
+link_text.innerText = `http://localhost:3000?meeting_id=${RoomID}&password=${RoomID}`
 console.log(cam_text);
 myVideo.muted = true;
 console.log(username)
@@ -211,25 +213,22 @@ const chat_disp = () =>{
         main_left.classList.remove('main__left_2')
         chatting.classList.add('display-none');
         participants.classList.add('display-none');
+        link.classList.add('display-none');
         chatting.classList.remove('display-none');
     }
     else{
         chatting.classList.add('display-none');
         participants.classList.add('display-none');
+        link.classList.add('display-none');
         main_right.classList.add('display-none')
         main_left.classList.add('main__left_2')
         main_left.classList.remove('main__left')
     }
 }
 
-const addparticipants = () =>{
-    const participants_list = document.querySelector('.participants_list');
-    console.log(participants_list);
-    // const video_names = document.querySelectorAll('.video_name');
-    var elements = document.getElementsByClassName("video_name");
-    console.log("sdfhgkjwf : ",Array.from(elements)[0].innerText)
-}
-
+main_right.classList.add('display-none')
+main_left.classList.add('main__left_2')
+main_left.classList.remove('main__left')
 // addparticipants();
 
 const part_disp = () =>{
@@ -254,11 +253,13 @@ const part_disp = () =>{
 
         chatting.classList.add('display-none');
         participants.classList.add('display-none');
+        link.classList.add('display-none');
         participants.classList.remove('display-none');
     }
     else{
         chatting.classList.add('display-none');
         participants.classList.add('display-none');
+        link.classList.add('display-none');
         main_right.classList.add('display-none')
         main_left.classList.add('main__left_2')
         main_left.classList.remove('main__left')
@@ -266,3 +267,23 @@ const part_disp = () =>{
 
 }
 
+const show_link = () =>{
+    if(main_right.classList.contains("display-none") || (!main_right.classList.contains("display-none") && link.classList.contains("display-none")))
+    {
+        main_right.classList.remove('display-none')
+        main_left.classList.add('main__left')
+        main_left.classList.remove('main__left_2')
+        chatting.classList.add('display-none');
+        participants.classList.add('display-none');
+        link.classList.add('display-none');
+        link.classList.remove('display-none');
+    }
+    else{
+        chatting.classList.add('display-none');
+        participants.classList.add('display-none');
+        link.classList.add('display-none');
+        main_right.classList.add('display-none')
+        main_left.classList.add('main__left_2')
+        main_left.classList.remove('main__left')
+    }
+}
