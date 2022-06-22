@@ -13,7 +13,7 @@ const chatting = document.getElementById('chatting');
 const participants = document.getElementById('participants');
 const link = document.getElementById('link')
 const link_text = document.querySelector('.link-text')
-link_text.innerText = `http://localhost:3000?meeting_id=${RoomID}&password=${RoomID}`
+link_text.innerText = `https://ankit-zoom-clone-pro.herokuapp.com?meeting_id=${RoomID}&password=${RoomID}`
 console.log(cam_text);
 myVideo.muted = true;
 console.log(username)
