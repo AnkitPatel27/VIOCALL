@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Clone></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="main__left" id="leftside">
+            <div id="main__videos">
+                <div id="video-grid">
+                    
+                </div>
+            </div>
+            <div class="main__controls">
+                <div class="main__controls__block">
+                    <div class="main__controls__button" onclick="MuteUnmute()">
+                        <span class="material-symbols-outlined mute_icon">
+                            mic
+                        </span>
+                        <span class="mute_text">Mute</span>
+                    </div>
+                    <div class="main__controls__button" onclick="video_on_off()">
+                        <span class="material-symbols-outlined cam_icon">
+                            videocam
+                            </span>
+                        <span class="cam_text">Stop Video</span>
+                        
+                    </div>
+                </div>
+                <div class="main__controls__block">
+                    <div class="main__controls__button">
+                        <span class="material-symbols-outlined">
+                            security
+                            </span>
+                        <span>Security</span>
+                    </div>
+                    <div class="main__controls__button" onclick="part_disp()">
+                        <span class="material-symbols-outlined">
+                            person
+                            </span>
+                        <span>Participants</span>
+                    </div>
+                    <div class="main__controls__button" onclick="chat_disp()">
+                        <span class="material-symbols-outlined">
+                            chat
+                            </span>
+                        <span>Chat</span>
+                    </div>
+                </div>
+                <div class="main__controls__block" >
+                    <div class="main__controls__button" onclick="leaveMeeting()">
+                        <span class="material-symbols-outlined">
+                            exit_to_app
+                            </span>
+                        <span class="leave-meeting">Leave Meeting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__right" id="rightside">
+            <div id="chatting" class="chat_class">
+                <div class="main__header">
+                <h6>Chat</h6>
+                </div>
+                <div class="main__chat__window">
+                    <div id="input_messages">
+
+                    </div>
+                </div>
+                <div class="main_message_container">
+                    <input type="text" placeholder="Type message here..." id="input_message">
+                </div>
+            </div>
+            <div id="participants" class="display-none">
+                <div class="main__header">
+                    <h6>Participants</h6>
+                </div>
+                <div class="participants_list">
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const RoomID = "<%= roomId %>";
+        const username = "<%= username %>";
+        </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.4.5/dist/peerjs.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

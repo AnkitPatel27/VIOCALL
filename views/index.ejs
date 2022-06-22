@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Clone index</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="left">
+          <div class="header">
+            <h2 class="animation a1">Welcome Back</h2>
+            <h4 class="animation a2">Join or Create new meeting</h4>
+          </div>
+          <div class="form">
+            <input type="text" class="form-field  Username_input animation a3" placeholder="Enter Your Name" required>
+            <input type="text" class="form-field meeting_id_input animation a3" placeholder="Meeting ID" required>
+            <input type="password" class="form-field meet_password_input animation a3" placeholder="Password" required>
+            <!-- <p class="animation a5"><a href="#">Forgot Password</a></p> -->
+            <button onclick="join_meeting()" class="animation a4">Join Meeting</button>
+            <button onclick="new_meet()" class="animation a5 button2">Start New Meeting</button>
+        </div>
+        </div>
+        <div class="right"></div>
+      </div>
+      <script>
+         const meeting_id = "<%= meeting_id %>";
+         const meet_password = "<%= meet_password %>";
+         const new_meetid = "<%= new_meetid %>";
+      </script>
+      <script src="index.js"></script>
+</body>
+</html>
