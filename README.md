@@ -1,4 +1,4 @@
-# zoom-clone
+# VIOCALL 
 This is Nodejs video calling app.
 We can also chat with the other user in real time and for this purpose socket.io is used.
 For getting live video stream of the other users I have used peer.js 
